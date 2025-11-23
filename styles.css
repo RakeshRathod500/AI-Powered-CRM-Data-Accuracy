@@ -1,4 +1,4 @@
-* {
+/* /* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -126,4 +126,334 @@ th {
 
 .status-error {
     color: #e24a4a;
+} */
+
+
+
+/* ---------------------------------------------------
+   GLOBAL RESET & BASE STYLES
+--------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #dbe8ff, #eef2ff, #fff);
+    min-height: 100vh;
+    color: #2d2d2d;
+    overflow-x: hidden;
+}
+
+/* ---------------------------------------------------
+   HEADER
+--------------------------------------------------- */
+header {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: linear-gradient(125deg, #4a90e2, #357abd, #1f4e79);
+    color: white;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+header p {
+    opacity: 0.9;
+    margin-top: 8px;
+}
+
+/* Stylish signature badge */
+header::after {
+    content: "Crafted with ❤️ by Rakesh Rathod";
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* ---------------------------------------------------
+   CONTAINER
+--------------------------------------------------- */
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* ---------------------------------------------------
+   UPLOAD SECTION
+--------------------------------------------------- */
+.upload-section {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease;
+}
+
+.upload-section h2 {
+    font-weight: 700;
+    color: #1a3d66;
+    margin-bottom: 1rem;
+}
+
+.file-input {
+    padding: 1.5rem;
+    border: 2px dashed #4a90e2;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(255,255,255,0.4);
+    transition: all 0.35s ease;
+}
+
+.file-input:hover {
+    background: rgba(74,144,226,0.1);
+    border-color: #357abd;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(53,122,189,0.2);
+}
+
+/* BUTTON */
+.process-btn {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    border: none;
+    padding: 0.9rem 2.4rem;
+    border-radius: 40px;
+    color: white;
+    margin-top: 1.4rem;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: .5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.process-btn:hover {
+    background: linear-gradient(135deg, #5ea4f5, #3f6fb1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------
+   RESULTS SECTION
+--------------------------------------------------- */
+#results {
+    display: none;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.grid-container {
+    margin-top: 2.2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 2rem;
+}
+
+/* CHART CARDS */
+.chart-container {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+    transition: all .3s ease;
+}
+
+.chart-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.16);
+}
+
+/* ---------------------------------------------------
+   TABLE STYLING (PROFESSIONAL MODERN LOOK)
+--------------------------------------------------- */
+.table-container {
+    margin-top: 2rem;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(14px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    animation: fadeInUp 0.9s ease;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #263238;
+}
+
+th {
+    background: #edf4ff;
+    padding: 14px;
+    color: #357abd;
+    font-size: 0.95rem;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 2px solid #d6e6ff;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 0.92rem;
+}
+
+tr:hover {
+    background-color: rgba(74,144,226,0.06);
+}
+
+.status-valid {
+    color: #25d366;
+    font-weight: bold;
+}
+
+.status-error {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: #5a5a5a;
+}
+
+/* ---------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+} */
+
+
+
+/* ---------------------------------------------------
+   TABLE CONTAINER (Glassmorphism + Shadow + Smooth)
+--------------------------------------------------- */
+.table-container {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 2rem;
+    border-radius: 22px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+    overflow-x: auto;
+    animation: fadeInUp 0.9s ease;
+    transition: 0.3s ease;
+}
+
+.table-container:hover {
+    box-shadow: 0 28px 45px rgba(0,0,0,0.18);
+}
+
+/* ---------------------------------------------------
+   TABLE CORE
+--------------------------------------------------- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px; /* modern soft row gaps */
+    font-size: 0.95rem;
+    color: #1e2a35;
+}
+
+/* ---------------------------------------------------
+   HEADERS (Sticky + Soft shadow)
+--------------------------------------------------- */
+th {
+    background: #e8f1ff;
+    padding: 14px;
+    color: #2769c6;
+    font-weight: 700;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    border-bottom: 2px solid #c9dcff;
+    border-radius: 10px;
+    backdrop-filter: blur(14px);
+}
+
+/* ---------------------------------------------------
+   TABLE ROWS (Glass row cards)
+--------------------------------------------------- */
+tbody tr {
+    background: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+tbody tr:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 14px rgba(74, 144, 226, 0.25);
+    background: rgba(255,255,255,0.95);
+}
+
+/* Rounded corners effect */
+tbody tr td:first-child {
+    border-radius: 12px 0 0 12px;
+}
+tbody tr td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+/* ---------------------------------------------------
+   TABLE CELLS
+--------------------------------------------------- */
+td {
+    padding: 14px;
+    border-bottom: none;
+}
+
+/* Optional zebra striping */
+tbody tr:nth-child(even) {
+    background: rgba(240, 247, 255, 0.7);
+}
+
+/* ---------------------------------------------------
+   STATUS BADGES
+--------------------------------------------------- */
+.status-valid {
+    color: #0abf4b;
+    font-weight: 700;
+    background: rgba(10,191,75,0.15);
+    padding: 6px 12px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.status-error {
+    color: #ff3b3b;
+    font-weight: 700;
+    background: rgba(255,59,59,0.15);
+    padding: 6px 12px;
+    border-radius: 10px;
+    display: inline-block;
 }
